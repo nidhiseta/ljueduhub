@@ -25,6 +25,9 @@ app.use('/api/notes', notesRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/activity', activityRoutes);
 
+app.get('/', (req, res) => {
+  res.json({ message: "Welcome to the backend!", status: "OK" });
+});
 // basic health
 app.get('/api/health', (req, res) => res.json({ ok:true, now: new Date() }));
 
